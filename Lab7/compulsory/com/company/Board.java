@@ -17,6 +17,7 @@ public class Board extends Thread {
     public void run() {
         for (int i = 0; i < (n * (n - 1)); i++) {
             Token token = new Token(n);
+            //give game new token if it wasn't already taken
             if (usedTokens.isEmpty()) {
                 usedTokens.add(token);
             } else {
