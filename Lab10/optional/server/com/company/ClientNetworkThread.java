@@ -53,7 +53,8 @@ public class ClientNetworkThread extends Thread {
                         myCommand = new LoginCommand(out, people);
                         myCommand.execute(command[1]);
                         name = ((LoginCommand) myCommand).getName();
-                        socket.setSoTimeout(200000);
+                        socket.setSoTimeout(180000);//if client is logged in and he doesn't do
+                        //anything for 3 minutes, terminate connection
                     } else if (name != null) {
                         //if user logged proceed to do rest of commands
                         switch (command[0]) {
